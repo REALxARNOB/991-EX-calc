@@ -1,57 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f0f0;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
 }
 
 .calculator {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    background-color: #fff;
-    width: 400px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 25px;
+    background-color: #2a2a2a;
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
 }
 
 .display {
     width: 100%;
-    height: 60px;
+    height: 80px;
     border: none;
-    background-color: #eee;
+    background-color: #1a1a1a;
+    color: #ffffff;
     text-align: right;
-    font-size: 2em;
-    padding: 10px;
+    font-size: 2.5em;
+    padding: 20px;
     box-sizing: border-box;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
     overflow-x: auto;
     position: relative;
 }
 
 #mode {
     position: absolute;
-    top: 5px;
-    left: 5px;
-    font-size: 0.5em;
-    color: #888;
+    top: 10px;
+    left: 10px;
+    font-size: 0.6em;
+    color: #aaaaaa;
 }
 
 .buttons {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-gap: 10px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 15px;
 }
 
 button {
-    height: 50px;
-    font-size: 1.2em;
+    height: 60px;
+    font-size: 1.3em;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
-    background-color: #f9f9f9;
+    background-color: #3a3a3a;
+    color: #ffffff;
+    transition: background-color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
-    background-color: #eee;
+    background-color: #4a4a4a;
+}
+
+button:active {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transform: translateY(1px);
+}
+
+.op {
+    background-color: #ff9f0a;
+    color: #ffffff;
+}
+
+.op:hover {
+    background-color: #ffaf3a;
+}
+
+.func {
+    background-color: #6a6a6a;
+}
+
+.func:hover {
+    background-color: #7a7a7a;
+}
+
+.equals {
+    grid-column: span 2;
+    background-color: #ff9f0a;
+}
+
+.zero {
+    grid-column: span 2;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+    .buttons {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .buttons {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
