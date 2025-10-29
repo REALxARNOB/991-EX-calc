@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scientific Calculator</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="calculator">
+        <div class="display">
+            <span id="mode">deg</span>
+            <input type="text" id="result" disabled>
+        </div>
+        <div class="buttons">
+            <button onclick="display('(')">(</button>
+            <button onclick="display(')')">)</button>
+            <button onclick="memoryClear()">MC</button>
+            <button onclick="memoryAdd()">M+</button>
+            <button onclick="memorySubtract()">M-</button>
+            <button onclick="memoryRecall()">MR</button>
+            <button onclick="clearScreen()">C</button>
+            <button onclick="backspace()"><-</button>
+            <button onclick="toggleMode()">Deg/Rad</button>
+            <button onclick="display('^')">x^y</button>
+            <button onclick="display('sqrt(')">√</button>
+            <button onclick="display('sin(')">sin</button>
+            <button onclick="display('cos(')">cos</button>
+            <button onclick="display('tan(')">tan</button>
+            <button onclick="display('log10(')">log</button>
+            <button onclick="display('log(')">ln</button>
+            <button onclick="display('pi')">π</button>
+            <button onclick="display('e')">e</button>
+            <button onclick="display('1')">1</button>
+            <button onclick="display('2')">2</button>
+            <button onclick="display('3')">3</button>
+            <button onclick="display('+')">+</button>
+            <button onclick="display('4')">4</button>
+            <button onclick="display('5')">5</button>
+            <button onclick="display('6')">6</button>
+            <button onclick="display('-')">-</button>
+            <button onclick="display('7')">7</button>
+            <button onclick="display('8')">8</button>
+            <button onclick="display('9')">9</button>
+            <button onclick="display('*')">*</button>
+            <button onclick="display('.')">.</button>
+            <button onclick="display('0')">0</button>
+            <button onclick="calculate()">=</button>
+            <button onclick="display('/')">/</button>
+            <button onclick="display('sinh(')">sinh</button>
+            <button onclick="display('cosh(')">cosh</button>
+            <button onclick="display('tanh(')">tanh</button>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/12.4.2/math.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
