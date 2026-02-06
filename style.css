@@ -67,9 +67,15 @@ button:hover {
     background-color: #4a4a4a;
 }
 
-button:active {
+button:active,
+button.keyboard-active {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     transform: translateY(1px);
+}
+
+button:focus-visible {
+    outline: 2px solid #ff9f0a;
+    outline-offset: 2px;
 }
 
 .op {
