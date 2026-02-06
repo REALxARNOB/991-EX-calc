@@ -70,3 +70,31 @@ function memoryRecall() {
     }
     document.getElementById('result').value = memory;
 }
+
+document.addEventListener('keydown', function(event) {
+    const key = event.key;
+
+    // Allow default keyboard navigation (Enter/Space on focused buttons)
+    if (document.activeElement.tagName === 'BUTTON' && (key === 'Enter' || key === ' ')) {
+        return;
+    }
+
+    const keyMap = {
+        'Enter': '=',
+        'Escape': 'C',
+        'Backspace': '⌫',
+        'Delete': 'C',
+        'p': 'π'
+    };
+    const targetText = keyMap[key] || key;
+
+    const buttons = Array.from(document.querySelectorAll('button'));
+    const btn = buttons.find(b => b.innerText === targetText);
+
+    if (btn) {
+        event.preventDefault();
+        btn.click();
+        btn.classList.add('keyboard-active');
+        setTimeout(() => btn.classList.remove('keyboard-active'), 100);
+    }
+});
