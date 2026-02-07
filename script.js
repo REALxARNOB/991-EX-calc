@@ -70,3 +70,25 @@ function memoryRecall() {
     }
     document.getElementById('result').value = memory;
 }
+
+document.addEventListener('keydown', function(event) {
+    const key = event.key;
+
+    // Numbers and operators
+    if (/^[0-9.+\-*/^()%]$/.test(key)) {
+        display(key);
+    }
+    // Enter or = to calculate
+    else if (key === 'Enter' || key === '=') {
+        event.preventDefault();
+        calculate();
+    }
+    // Backspace
+    else if (key === 'Backspace') {
+        backspace();
+    }
+    // Escape to clear
+    else if (key === 'Escape') {
+        clearScreen();
+    }
+});
