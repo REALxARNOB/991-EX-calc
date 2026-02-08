@@ -70,3 +70,18 @@ function memoryRecall() {
     }
     document.getElementById('result').value = memory;
 }
+
+document.addEventListener('keydown', function(event) {
+    let key = event.key;
+
+    if (key === 'Enter') key = '=';
+    if (key === 'c' || key === 'C') key = 'Escape';
+
+    const button = document.querySelector(`button[data-key="${key}"]`);
+    if (button) {
+        event.preventDefault();
+        button.click();
+        button.classList.add('active');
+        setTimeout(() => button.classList.remove('active'), 100);
+    }
+});
