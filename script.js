@@ -70,3 +70,20 @@ function memoryRecall() {
     }
     document.getElementById('result').value = memory;
 }
+
+document.addEventListener('keydown', function(event) {
+    const key = event.key;
+    if ((key >= '0' && key <= '9') || key === '.') {
+        display(key);
+    } else if (['+', '-', '*', '/', '(', ')', '^'].includes(key)) {
+        event.preventDefault();
+        display(key);
+    } else if (key === 'Enter') {
+        event.preventDefault();
+        calculate();
+    } else if (key === 'Backspace') {
+        backspace();
+    } else if (key === 'Escape') {
+        clearScreen();
+    }
+});
