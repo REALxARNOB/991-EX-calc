@@ -70,3 +70,28 @@ function memoryRecall() {
     }
     document.getElementById('result').value = memory;
 }
+
+document.addEventListener('keydown', function(event) {
+    if (event.ctrlKey || event.metaKey) return;
+
+    const key = event.key;
+    const active = document.activeElement;
+
+    // Allow Enter/Space on buttons for accessibility
+    if ((key === 'Enter' || key === ' ') && active.tagName === 'BUTTON') return;
+
+    if (/[0-9]/.test(key)) {
+        display(key);
+    } else if (['+', '-', '*', '/', '.', '(', ')', '^'].includes(key)) {
+        event.preventDefault();
+        display(key);
+    } else if (key === 'Enter') {
+        event.preventDefault();
+        calculate();
+    } else if (key === 'Backspace') {
+        event.preventDefault();
+        backspace();
+    } else if (key === 'Escape') {
+        clearScreen();
+    }
+});
