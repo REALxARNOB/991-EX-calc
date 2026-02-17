@@ -35,6 +35,9 @@ body {
     border-radius: 10px;
     overflow-x: auto;
     position: relative;
+    display: flex; /* Added to align input */
+    align-items: center;
+    justify-content: flex-end;
 }
 
 #mode {
@@ -43,6 +46,17 @@ body {
     left: 10px;
     font-size: 0.6em;
     color: #aaaaaa;
+}
+
+#result {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: inherit;
+    font-size: inherit;
+    text-align: right;
+    font-family: inherit;
+    outline: none;
 }
 
 .buttons {
@@ -70,6 +84,12 @@ button:hover {
 button:active {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     transform: translateY(1px);
+}
+
+button:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+    z-index: 1; /* Ensure outline is visible */
 }
 
 .op {
