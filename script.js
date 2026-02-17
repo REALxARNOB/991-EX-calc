@@ -70,3 +70,27 @@ function memoryRecall() {
     }
     document.getElementById('result').value = memory;
 }
+
+// Add keyboard support
+document.addEventListener('keydown', function(event) {
+    const key = event.key;
+
+    // Allow users to use Enter to activate focused buttons
+    if (key === 'Enter' && document.activeElement.tagName === 'BUTTON') {
+        return;
+    }
+
+    if ((key >= '0' && key <= '9') || key === '.') {
+        display(key);
+    } else if (key === '+' || key === '-' || key === '*' || key === '/' || key === '(' || key === ')') {
+        event.preventDefault(); // Prevent browser shortcuts (like Quick Find for /)
+        display(key);
+    } else if (key === 'Enter' || key === '=') {
+        event.preventDefault();
+        calculate();
+    } else if (key === 'Backspace') {
+        backspace();
+    } else if (key === 'Escape' || key.toLowerCase() === 'c') {
+        clearScreen();
+    }
+});
