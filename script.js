@@ -70,3 +70,29 @@ function memoryRecall() {
     }
     document.getElementById('result').value = memory;
 }
+
+// Keyboard support
+document.addEventListener('keydown', (event) => {
+    const key = event.key;
+
+    // Numbers and basic operators
+    if (/^[0-9.e]$/.test(key)) {
+        display(key);
+    } else if (['+', '-', '*', '/', '(', ')', '^'].includes(key)) {
+        display(key);
+    } else if (key === 'Backspace') {
+        backspace();
+    } else if (key === 'Escape') {
+        clearScreen();
+    } else if (key === 'Enter') {
+        // Prevent calculating if the user is activating a button with Enter
+        if (document.activeElement && document.activeElement.tagName === 'BUTTON') {
+            return;
+        }
+        event.preventDefault();
+        calculate();
+    } else if (key === '=') {
+        event.preventDefault();
+        calculate();
+    }
+});
