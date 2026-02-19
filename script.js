@@ -70,3 +70,40 @@ function memoryRecall() {
     }
     document.getElementById('result').value = memory;
 }
+
+// Keyboard Support
+document.addEventListener('keydown', function(event) {
+    // Allow default button activation via Enter/Space
+    if (event.target.tagName === 'BUTTON' && (event.key === 'Enter' || event.key === ' ')) {
+        return;
+    }
+
+    // Ignore if modifier keys are pressed (except Shift for symbols like + or *)
+    // We check Shift only for non-symbol keys if necessary, but actually standard symbols come with Shift.
+    // However, Ctrl/Meta/Alt usually imply browser shortcuts.
+    if (event.ctrlKey || event.metaKey || event.altKey) {
+        return;
+    }
+
+    const key = event.key;
+
+    if (/^[0-9.]$/.test(key)) {
+        event.preventDefault();
+        display(key);
+    } else if (['+', '-', '*', '/', '(', ')', '^', 'e'].includes(key)) {
+        event.preventDefault();
+        display(key);
+    } else if (key === 'Enter' || key === '=') {
+        event.preventDefault();
+        calculate();
+    } else if (key === 'Backspace') {
+        event.preventDefault();
+        backspace();
+    } else if (key === 'Escape') {
+        event.preventDefault();
+        clearScreen();
+    } else if (key.toLowerCase() === 'c') {
+        event.preventDefault();
+        clearScreen();
+    }
+});
