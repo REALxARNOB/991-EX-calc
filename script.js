@@ -70,3 +70,39 @@ function memoryRecall() {
     }
     document.getElementById('result').value = memory;
 }
+
+document.addEventListener('keydown', function(event) {
+    const key = event.key;
+
+    // Ignore if modifier keys are pressed (e.g. Ctrl+C, Ctrl+V, Ctrl+R)
+    if (event.ctrlKey || event.metaKey || event.altKey) {
+        return;
+    }
+
+    // Allow default behavior for buttons to support keyboard navigation (Tab + Enter)
+    if (event.target.tagName === 'BUTTON' && (key === 'Enter' || key === ' ')) {
+        return;
+    }
+
+    // Numbers (ensure single digit to avoid F-keys)
+    if (/^[0-9]$/.test(key)) {
+        event.preventDefault();
+        display(key);
+    }
+    // Operators
+    else if (['+', '-', '*', '/', '.', '(', ')', '^'].includes(key)) {
+        event.preventDefault();
+        display(key);
+    }
+    // Special keys
+    else if (key === 'Enter' || key === '=') {
+        event.preventDefault();
+        calculate();
+    } else if (key === 'Backspace') {
+        event.preventDefault(); // Prevent browser back navigation
+        backspace();
+    } else if (key === 'Escape') {
+        event.preventDefault();
+        clearScreen();
+    }
+});
