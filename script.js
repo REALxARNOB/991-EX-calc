@@ -70,3 +70,32 @@ function memoryRecall() {
     }
     document.getElementById('result').value = memory;
 }
+
+// Keyboard support
+document.addEventListener('keydown', (event) => {
+    const key = event.key;
+
+    // Numbers
+    if (/^[0-9]$/.test(key)) {
+        display(key);
+    }
+    // Operators
+    else if (['+', '-', '*', '/', '.', '(', ')', '^'].includes(key)) {
+        if (key === '/') event.preventDefault();
+        display(key);
+    }
+    // Calculate
+    else if (key === 'Enter' || key === '=') {
+        if (event.target.tagName === 'BUTTON' && key === 'Enter') return;
+        event.preventDefault();
+        calculate();
+    }
+    // Backspace
+    else if (key === 'Backspace') {
+        backspace();
+    }
+    // Clear
+    else if (key === 'Escape') {
+        clearScreen();
+    }
+});
