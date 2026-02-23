@@ -70,3 +70,36 @@ function memoryRecall() {
     }
     document.getElementById('result').value = memory;
 }
+
+document.addEventListener('keydown', (event) => {
+    const key = event.key;
+
+    // Numbers and decimal
+    if (/^[0-9.]$/.test(key)) {
+        display(key);
+    }
+
+    // Operators
+    if (['+', '-', '*', '/', '(', ')', '^'].includes(key)) {
+        display(key);
+        event.preventDefault(); // Prevent quick find in Firefox for /
+    }
+
+    // Calculate
+    if (key === 'Enter' || key === '=') {
+        calculate();
+        event.preventDefault();
+    }
+
+    // Backspace
+    if (key === 'Backspace') {
+        backspace();
+        event.preventDefault();
+    }
+
+    // Clear
+    if (key === 'Escape' || key.toLowerCase() === 'c') {
+        clearScreen();
+        event.preventDefault();
+    }
+});
