@@ -70,3 +70,22 @@ function memoryRecall() {
     }
     document.getElementById('result').value = memory;
 }
+
+document.addEventListener('keydown', function(event) {
+    const key = event.key;
+
+    // Numbers and Operators
+    if (/^[0-9.]$/.test(key)) {
+        display(key);
+    } else if (['+', '-', '*', '/', '(', ')', '^'].includes(key)) {
+        display(key);
+    } else if (key === 'Enter' || key === '=') {
+        event.preventDefault();
+        calculate();
+    } else if (key === 'Backspace') {
+        event.preventDefault();
+        backspace();
+    } else if (key === 'Escape' || key.toLowerCase() === 'c') {
+        clearScreen();
+    }
+});
