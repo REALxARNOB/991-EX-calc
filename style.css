@@ -45,6 +45,23 @@ body {
     color: #aaaaaa;
 }
 
+#result {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    text-align: right;
+    outline: none;
+    padding: 0;
+    margin: 0;
+}
+
+#result:focus {
+    box-shadow: inset 0 -2px 0 #ff9f0a;
+}
+
 .buttons {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
