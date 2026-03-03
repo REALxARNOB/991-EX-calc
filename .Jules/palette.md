@@ -1,0 +1,3 @@
+## 2024-05-24 - Accessibility and Visual Distinction for Read-Only Inputs
+**Learning:** Standard disabled inputs prevent selection by screen readers and don't receive focus, negatively impacting accessibility. Switching to `readonly` allows standard interaction. However, read-only inputs without custom styling can be unintuitive. Adding clear visual feedback (like an inset box-shadow) during `:focus-visible` creates an active accessible marker without shifting layout.
+**Action:** When converting `disabled` interactive elements to `readonly` for accessibility, assure that focus states are clearly delineated using CSS outline or box-shadow to support keyboard users.
