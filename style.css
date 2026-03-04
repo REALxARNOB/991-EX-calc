@@ -29,12 +29,13 @@ body {
     color: #ffffff;
     text-align: right;
     font-size: 2.5em;
-    padding: 20px;
+    padding: 10px 20px 0px 20px;
     box-sizing: border-box;
     margin-bottom: 20px;
     border-radius: 10px;
-    overflow-x: auto;
     position: relative;
+    display: flex;
+    align-items: flex-end;
 }
 
 #mode {
@@ -43,6 +44,23 @@ body {
     left: 10px;
     font-size: 0.6em;
     color: #aaaaaa;
+}
+
+#result {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    text-align: right;
+    font-size: 1em; /* inherits from .display's 2.5em */
+    font-family: 'Roboto', sans-serif;
+    outline: none;
+    cursor: text;
+}
+
+#result:focus-visible {
+    box-shadow: inset 0 -2px 0 #ff9f0a;
 }
 
 .buttons {
