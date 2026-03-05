@@ -1,0 +1,3 @@
+## 2024-05-14 - Replace Disabled Inputs With Readonly For Screen Readers
+**Learning:** Using `disabled` on input elements makes them completely unreachable by keyboard navigation and screen readers. For displays like a calculator result, it's a common accessibility pitfall.
+**Action:** Use `readonly` along with custom CSS and a focus visible indicator (e.g., `box-shadow: inset`) instead of `disabled` to preserve keyboard focus while preventing direct typing, ensuring screen readers can announce the value. Add ARIA labels to icon-only buttons as well.
