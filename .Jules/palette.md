@@ -1,0 +1,3 @@
+## 2024-05-24 - Calculator Readonly Results
+**Learning:** Using `disabled` on input fields that just display results (like a calculator display) prevents users from focusing them or selecting the text, making it inaccessible for screen readers to announce the value.
+**Action:** Use `readonly` instead of `disabled` for non-editable result displays, and pair it with an appropriate `aria-label` so screen readers announce its purpose, plus custom focus styling to provide a clear visual indicator without layout shift.
