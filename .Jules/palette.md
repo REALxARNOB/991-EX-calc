@@ -1,0 +1,3 @@
+## 2024-06-25 - Calculator Input Accessibility
+**Learning:** Using `disabled` on calculator result inputs severely harms accessibility, as it removes the element from the tab order and prevents screen readers from announcing it, as well as stopping users from copying the result. Using `readonly` correctly preserves functionality while enabling focus and screen reader support, requiring a specific focus state like `box-shadow` for visual feedback.
+**Action:** Always prefer `readonly` over `disabled` for result displays, and ensure a clear `:focus` style is applied to communicate focus to keyboard users. Add ARIA labels to icon-only buttons (like `C` and `⌫`) to ensure their purpose is clear to screen reader users.
