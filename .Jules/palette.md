@@ -1,0 +1,3 @@
+## 2024-05-14 - Improve accessibility of result input field
+**Learning:** Using `disabled` on input fields prevents focus and text selection, making it difficult for users relying on keyboard navigation or screen readers to access the content. Using `readonly` with `aria-label` allows focus and selection while preventing unintended modifications. Adding an inset box-shadow provides a visible accessibility indicator without shifting the layout.
+**Action:** Use `readonly` instead of `disabled` for non-editable but important input fields like calculator result displays, and pair it with a visible focus indicator using `box-shadow` or `outline`.
