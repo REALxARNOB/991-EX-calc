@@ -1,0 +1,3 @@
+## 2024-05-28 - Calculator Display Accessibility Focus State
+**Learning:** `disabled` inputs completely prevent screen readers from focusing or reading their content effectively in interactive contexts like a calculator result display.
+**Action:** Replace `disabled` with `readonly` combined with an explicit `aria-label="Calculator Result"`. For visual coherence and focus indication, style the `readonly` input seamlessly (`background: transparent`, `border: none`) into its container while providing a distinct focus ring (e.g., `box-shadow: inset 0 -2px 0 #ff9f0a`) so users can select or focus to read the output.
