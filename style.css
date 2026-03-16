@@ -37,6 +37,24 @@ body {
     position: relative;
 }
 
+#result {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    color: inherit;
+    font-size: inherit;
+    text-align: right;
+    outline: none;
+    font-family: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+#result:focus {
+    box-shadow: inset 0 -2px 0 #ff9f0a;
+}
+
 #mode {
     position: absolute;
     top: 10px;
