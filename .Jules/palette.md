@@ -1,0 +1,3 @@
+## 2024-05-19 - Using readonly instead of disabled for calculation displays
+**Learning:** Using `disabled` on input fields prevents focus and text selection, which is bad for accessibility and prevents users from copying the result. Using `readonly` allows focus and text selection while still preventing typing.
+**Action:** Use `readonly` instead of `disabled` for calculation displays to improve accessibility and enable copying.
