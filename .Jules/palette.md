@@ -1,0 +1,3 @@
+## 2024-05-24 - Result display accessibility
+**Learning:** Using `disabled` on input fields prevents focus and text selection, making them inaccessible to screen readers and difficult to use.
+**Action:** Use `readonly` instead of `disabled` for calculation result displays to enable text selection and better screen reader support. Style the input to look like part of the display container and provide a visible focus indicator without shifting the layout.
