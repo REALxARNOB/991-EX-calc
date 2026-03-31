@@ -1,0 +1,3 @@
+## 2024-05-15 - Calculator Display Accessibility & Icon Button ARIA Labels
+**Learning:** Using `disabled` on calculator display inputs prevents screen readers from accessing the content and breaks keyboard focus. Changing to `readonly` combined with a `focus-visible` ring provides a much better accessibility experience. Additionally, icon-only buttons (like Backspace and Clear) must have explicit `aria-label` attributes for screen readers.
+**Action:** Always prefer `readonly` over `disabled` for result displays that should be selectable/focusable but not editable by the user. Ensure all icon-only buttons have descriptive `aria-label`s.
