@@ -1,0 +1,3 @@
+## 2024-04-02 - Using readonly for form-like displays
+**Learning:** Using `disabled` on input fields makes them inaccessible to screen readers and prevents them from receiving focus. This breaks keyboard navigation for important visual data, like a calculator display.
+**Action:** Use `readonly` instead of `disabled` for data-display inputs so they remain focusable and readable by assistive technologies, ensuring they are not user-editable while still accessible.
