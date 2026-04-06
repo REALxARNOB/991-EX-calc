@@ -1,0 +1,3 @@
+## 2024-05-15 - Calculator Result Input Accessibility
+**Learning:** Using `disabled` on input fields removes them from the accessibility tree and prevents keyboard focus. This breaks screen readers and keyboard navigation for users trying to read output values. Additionally, outline focus rings can cause slight layout shifts on some input fields.
+**Action:** Use `readonly` instead of `disabled` to allow focus and text selection for accessibility. Use `box-shadow` instead of `outline` for focus indicators if it shifts layout or looks jarring.
