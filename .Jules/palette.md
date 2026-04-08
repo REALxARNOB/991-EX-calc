@@ -1,0 +1,3 @@
+## 2024-04-08 - Accessible Calculator Display and Buttons
+**Learning:** In custom calculator interfaces, using `disabled` on the result display prevents screen readers from accessing the output and blocks users from selecting text. Additionally, icon-only operation buttons (like Backspace) without ARIA labels are opaque to assistive technologies.
+**Action:** Always use `readonly` with an `aria-label` for result displays, styling them to blend seamlessly (e.g., `background: transparent`, `border: none`) while providing a distinct `:focus-visible` state. Ensure all icon-only buttons have descriptive `aria-label`s and clear `:focus-visible` outlines for keyboard navigation.
