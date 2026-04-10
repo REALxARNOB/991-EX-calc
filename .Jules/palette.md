@@ -1,0 +1,3 @@
+## 2024-05-18 - Calculator Focus and Accessibility State
+**Learning:** For a calculator interface, a `readonly` result input with a subtle `inset box-shadow` on focus preserves layout and accessibility better than a `disabled` input. Icon-only buttons (like Backspace and Clear) must have `aria-label`s for screen reader support. Keyboard navigation requires clear `:focus-visible` states on all interactive elements.
+**Action:** Always use `readonly` instead of `disabled` for result displays to allow focus and text selection. Ensure all icon-only buttons have descriptive `aria-label`s. Implement visible focus indicators for all interactive elements to support keyboard navigation.
