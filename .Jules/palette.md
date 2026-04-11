@@ -1,0 +1,3 @@
+## 2024-05-24 - Accessibility and Focus Improvements
+**Learning:** Icon-only buttons (like backspace and clear) lack semantic meaning for screen readers. Using `disabled` on input fields makes them inaccessible for focusing and text selection, whereas `readonly` preserves these abilities while preventing edits. Furthermore, keyboard navigation relies heavily on clear `:focus-visible` indicators.
+**Action:** Always add `aria-label` to icon-only buttons. Use `readonly` instead of `disabled` for result display inputs. Add distinct `outline` styles using `:focus-visible` for all interactive elements to support keyboard navigation.
