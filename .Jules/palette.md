@@ -1,0 +1,3 @@
+## 2024-05-24 - Accessibility improvements for calculator result display and buttons
+**Learning:** Using `disabled` on input fields prevents them from receiving focus, making their content inaccessible to screen readers and keyboard users.
+**Action:** Always use `readonly` instead of `disabled` for fields displaying results, ensuring they remain focusable and readable without allowing user edits. Additionally, ensure all interactive elements have visible focus indicators (`:focus-visible`) and proper ARIA labels.
