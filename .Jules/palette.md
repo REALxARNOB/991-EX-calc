@@ -1,0 +1,3 @@
+## 2024-05-14 - Accessible Focus States for Calculator UI
+**Learning:** In a heavily custom-styled UI like a calculator, using the `disabled` attribute on the primary display input breaks keyboard navigation and prevents screen readers from naturally accessing the result content. Furthermore, custom buttons often lack visible focus states when styled manually, making keyboard-only usage virtually impossible.
+**Action:** Instead of `disabled`, use `readonly` on display fields and inherit styles to blend it into the container. Provide clear `:focus-visible` outlines matching the primary brand color (e.g., #ff9f0a) to ensure keyboard navigation is obvious without disrupting mouse users. Always ensure icon-only buttons have descriptive ARIA labels.
