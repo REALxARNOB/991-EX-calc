@@ -1,0 +1,3 @@
+## 2026-04-28 - Calculator Accessibility Pattern
+**Learning:** The calculator relies on disabled inputs for the display, preventing screen reader users and keyboard navigators from selecting or focusing the result. Additionally, interactive buttons lack `:focus-visible` states, making keyboard navigation difficult to track.
+**Action:** Replace `disabled` with `readonly` on displays to allow focus/selection without editing, and always provide clear `:focus-visible` indicators (e.g., `outline: 2px solid #ff9f0a; outline-offset: 2px;`) for all interactive elements. Add ARIA labels to icon-only buttons (like Backspace).
