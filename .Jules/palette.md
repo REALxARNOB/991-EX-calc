@@ -1,0 +1,3 @@
+## 2024-03-21 - Calculator Keyboard & Screen Reader Accessibility
+**Learning:** Using `disabled` on calculator result displays breaks accessibility by preventing focus and reading by screen readers. Furthermore, icon-only buttons (like backspace and clear) lack semantic meaning without ARIA labels, making them inaccessible.
+**Action:** Replace `disabled` with `readonly` on input elements meant for display only. Provide `aria-label`s to all icon-only buttons to ensure they convey their purpose to assistive technologies. Maintain visual styling for focus states to aid keyboard navigation.
