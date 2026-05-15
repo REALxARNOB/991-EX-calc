@@ -1,0 +1,3 @@
+## 2026-05-15 - Added Accessibility to Calculator Elements
+**Learning:** Replaced `disabled` state with `readonly` for calculation displays allowing them to receive focus and be read by screen readers. Used visually appealing HTML entities (⌫) coupled with `aria-label` for meaningful text translation over non-semantic symbols (<-). Added explicit `:focus-visible` states to provide visual feedback for keyboard navigation on elements that historically only showed hover states.
+**Action:** Always favor `readonly` over `disabled` for output fields to ensure accessibility, always pair icon/symbol buttons with clear `aria-label` attributes, and explicitly define focus rings (`outline: 2px solid [color]`) to support key-based navigation workflows.
