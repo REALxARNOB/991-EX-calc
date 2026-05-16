@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>Scientific Calculator</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
@@ -8,7 +9,7 @@
     <div class="calculator">
         <div class="display">
             <span id="mode">deg</span>
-            <input type="text" id="result" disabled>
+            <input type="text" id="result" aria-label="Calculator Result" readonly>
         </div>
         <div class="buttons">
             <!-- Functions -->
@@ -28,8 +29,8 @@
             <button onclick="display('7')">7</button>
             <button onclick="display('8')">8</button>
             <button onclick="display('9')">9</button>
-            <button class="op" onclick="backspace()"><-</button>
-            <button class="op" onclick="clearScreen()">C</button>
+            <button class="op" onclick="backspace()" aria-label="Backspace">&#9003;</button>
+            <button class="op" onclick="clearScreen()" aria-label="Clear Display">C</button>
 
             <button onclick="display('4')">4</button>
             <button onclick="display('5')">5</button>
