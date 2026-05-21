@@ -1,0 +1,3 @@
+## 2024-05-24 - Calculator Accessibility Pass
+**Learning:** The calculator input is `disabled`, making it unselectable for users who might want to copy the result. Icon buttons like backspace (`<-`) and clear (`C`) lack ARIA labels, making them unclear to screen readers. Focus states are missing for keyboard navigation.
+**Action:** Replace `disabled` with `readonly` on the result input, apply transparent styling so it blends with the display, and add ARIA labels. Add `:focus-visible` styles for better keyboard accessibility.
