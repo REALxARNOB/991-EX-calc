@@ -1,0 +1,3 @@
+## 2024-03-20 - Accessible Calculator Display
+**Learning:** Setting input `disabled` blocks screen readers and keyboard users entirely. Using `readonly` allows it to be focused and read by screen readers. Furthermore, adding `box-shadow: inset 0 -2px 0 [color]` provides a nice focus indicator without shifting the entire layout. Icon-only buttons (like backspace and clear) require `aria-label` for screen reader users.
+**Action:** Always prefer `readonly` over `disabled` for result display fields that should be readable. Use inset box-shadows for focus indicators to avoid layout jumping. Ensure all icon-only buttons have explicit ARIA labels.
