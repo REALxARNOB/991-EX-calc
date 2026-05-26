@@ -1,0 +1,3 @@
+## 2024-05-24 - Accessibility of Readonly Inputs and Icon-Only Buttons
+**Learning:** Using `disabled` on an input prevents text selection and makes it inaccessible to screen readers. For purely calculated output fields, `readonly` combined with a hidden focus style provides a better user experience, allowing focus and text copying without giving the false impression that it can be edited. Furthermore, icon-only buttons (like backspace or clear) without explicit `aria-label` attributes are invisible or confusing to assistive technologies.
+**Action:** Always prefer `readonly` over `disabled` for result display fields that shouldn't be editable but still need to be accessible, and always add descriptive `aria-label`s to icon-only interactive elements.
