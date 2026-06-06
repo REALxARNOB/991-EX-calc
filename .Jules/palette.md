@@ -1,0 +1,3 @@
+## 2024-05-24 - Accessibility and Focus for Calculator Inputs
+**Learning:** Calculator display inputs must be readable by screen readers but protected from invalid manual character input. Simply using `disabled` breaks keyboard focus and accessibility. Also, icon-only buttons (like `<-` or `C`) are confusing for assistive technologies without explicit descriptions.
+**Action:** Use `readonly` instead of `disabled` for result inputs, and add explicit `aria-label` attributes to the input and abbreviated action buttons. Ensure visible focus outlines (`:focus-visible`) for full keyboard navigation.
