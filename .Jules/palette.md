@@ -1,0 +1,3 @@
+## 2026-06-07 - Calculator Display Accessibility
+**Learning:** Using `readonly` instead of `disabled` on calculator result inputs allows the text to be selected, copied, and properly focused by screen readers, which is crucial for accessibility. Furthermore, invisible or transparent input fields still require clear visual focus indicators (like inset box-shadows) to help sighted keyboard users track their position.
+**Action:** Always prefer `readonly` over `disabled` for result/display fields where user selection or screen reader focus is beneficial, and ensure all inputs, even transparent ones, have visible focus states.
