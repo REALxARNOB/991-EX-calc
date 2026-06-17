@@ -1,0 +1,4 @@
+
+## 2026-06-17 - Keyboard Navigation & Screen Reader Support for Calculator App
+**Learning:** In purely interactive UI widgets like calculators, disabling input fields (`disabled`) removes them from the tab order and prevents screen reader focus. Furthermore, icon-only buttons (`<-`, `C`) inherently lack context for screen reader users and can be confusing.
+**Action:** When working on form or calculator displays, use `readonly` combined with `aria-label` to keep elements interactive and readable for screen readers while preventing manual typing. Always add `aria-label` to icon-only buttons and utilize clear, accessible HTML entities (like `&#9003;` for backspace) rather than ad-hoc ASCII art. Ensure all interactive elements have strong `:focus-visible` states to support keyboard navigation.
